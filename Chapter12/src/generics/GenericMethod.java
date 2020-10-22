@@ -19,7 +19,13 @@ public class GenericMethod {
 		Point<Integer, Double> p1 = new Point<Integer, Double>(0, 0.0);
 		Point<Integer, Double> p2 = new Point<>(10, 10.0);
 		
+		Point<Integer, Integer> p3 = new Point<Integer, Integer>(0, 0);
+		Point<Integer, Integer> p4 = new Point<>(10, 10);
+		
 		double rect = GenericMethod.<Integer, Double>makeRectangle(p1, p2);
 		System.out.println("두 점으로 만들어진 사각형의 넓이는 " + rect + "입니다.");
+		
+		double rect2 = GenericMethod.<Integer, Integer>makeRectangle(p3, p4);
+		System.out.println("두 점으로 만들어진 사각형의 넓이는 " + rect2 + "입니다.");
 	}
 }

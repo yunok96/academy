@@ -1,5 +1,7 @@
 package innerclass;
 
+import innerclass.OutClass.InStaticClass;
+
 class OutClass {
 
 	private int num = 10;
@@ -16,6 +18,7 @@ class OutClass {
 		//static int sInNum = 200;  //에러 남
 		
 		void inTest(){
+			System.out.println(inNum);
 			System.out.println("OutClass num = " +num + "(외부 클래스의 인스턴스 변수)");
 			System.out.println("OutClass sNum = " + sNum + "(외부 클래스의 스태틱 변수)");
 		}
@@ -57,12 +60,14 @@ class OutClass {
 public class InnerTest{
 	
 	public static void main(String[] args){
-	
+		
+		OutClass out = new OutClass();
+		OutClass.InClass ic = out.new InClass();
+		System.out.println(ic.inNum);
 		OutClass outClass = new OutClass();
 		System.out.println("외부 클래스 이용하여 내부 클래스 기능 호출");
 		outClass.usingClass();    // 내부 클래스 기능 호출
 	    System.out.println();
-	    
 	/*	OutClass.InClass inClass = outClass.new InClass();   // 외부 클래스를 이용하여 내부 클래스 생성
 		System.out.println("외부 클래스 변수를 이용하여 내부 클래스 생성");
 		inClass.inTest();

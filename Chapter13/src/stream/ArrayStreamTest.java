@@ -19,7 +19,10 @@ public class ArrayStreamTest {
 		
 		
 		int sum  = Arrays.stream(arr).sum();
+		
+		System.out.println("½ºÆ®¸²");
 		System.out.println(sum);
+		
 		
 		
 		List<Integer> list = new ArrayList<Integer>();

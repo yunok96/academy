@@ -47,7 +47,7 @@ public class Member implements Comparable<Member>{
 
 	@Override
 	public int compareTo(Member member) {
-		
+		System.out.println(member.memberId+"이 이미 있음, "+this.memberId);
 		return (this.memberId - member.memberId);   //오름차순
 		//return (this.memberId - member.memberId) *  (-1);   //내림 차순
 	}
