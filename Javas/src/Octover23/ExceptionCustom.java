@@ -1,0 +1,33 @@
+package Octover23;
+
+public class ExceptionCustom {
+	public void checkNum(int num) throws LG, Samsung{//¿©·¯°³ ¿¹¿Ü	
+		if(num%2==1) {
+			throw new LG("¿¤Áã");
+		}
+		else if(num%2==0) {
+			throw new Samsung("½Ü¼þ");//»ï¼º ÀÍ¼Á¼Ç¿¡ Ä¿½ºÅÒ ÀÎ¼ö·Î ´øÁü
+		}
+	}
+	public static void main(String[] args) {
+		
+		ExceptionCustom ec = new ExceptionCustom();
+		int a = Integer.valueOf(args[0]);
+		System.out.println(a);
+		try {
+			ec.checkNum(3);
+		} catch(LG | Samsung e) {//¿©·¯°³ Ä³Ä¡ÇÔ
+			System.out.println(e.getMessage());
+		}
+	}
+}
+class Samsung extends Exception{
+	Samsung(String ma) {//ÃÖ»óÀ§·Î ¸Þ¼¼Áö ³Ñ±è
+		super(ma);
+	}
+}
+class LG extends Exception{
+	LG(String ma){
+		super(ma);
+	}
+}

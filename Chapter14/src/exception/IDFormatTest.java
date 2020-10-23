@@ -25,6 +25,7 @@ public class IDFormatTest {
 		IDFormatTest test = new IDFormatTest();
 		String userID = null;
 		try {
+			System.out.println("null 시도");
 			test.setUserID(userID);
 		} catch (IDFormatException e) {
 			System.out.println(e.getMessage());
@@ -32,6 +33,7 @@ public class IDFormatTest {
 		
 		userID = "1234567";
 		try {
+			System.err.println("1234567 시도");
 			test.setUserID(userID);
 		} catch (IDFormatException e) {
 			System.out.println(e.getMessage());
